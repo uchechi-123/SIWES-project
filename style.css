@@ -510,6 +510,11 @@ textarea {
     flex-direction: column;
   }
 
+   .home-image img {
+    width: 92%;
+    height: 92%;
+  }
+
     .main { 
         grid-template-columns: 1fr; 
         gap: 3rem; 
@@ -530,6 +535,12 @@ textarea {
 @media (max-width: 480px) {
   html {
     font-size: 55%;
+  }
+
+
+  .home-image img {
+    width: 92%;
+    height: 92%;
   }
 
   .products {
