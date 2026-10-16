@@ -151,3 +151,24 @@ if (searchIcon && headerIcons) {
     document.getElementById("searchInput").focus();
   });
 }
+
+
+
+
+
+  const WHATSAPP_NUMBER = "2347089964055"; // 07089964055 in international format
+
+  document.getElementById("enquiry").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const f = e.target;
+    const lines = [
+      "Hello Creme & Crumb, my name is " + f.name.value.trim() + ".",
+      "I'd like to order: " + f.item.value + ".",
+    ];
+    if (f.date.value) lines.push("Needed by: " + f.date.value + ".");
+    if (f.message.value.trim()) lines.push("Details: " + f.message.value.trim());
+
+    const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(lines.join("\n"));
+    window.open(url, "_blank", "noopener");
+    document.getElementById("note").textContent = "Opening WhatsApp…";
+  });
